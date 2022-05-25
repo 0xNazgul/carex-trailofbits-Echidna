@@ -1,0 +1,6 @@
+filterBlacklist: false
+# For all tests
+# filterFunctions: ["Test.testFromInt(int256)", "testToInt(int128)", "testFromUInt(uint256)", "testToUInt(int128)", "testFrom128x128(int256)", "testTo128x128(int128)", "testAdd(int128, int128)", "testSub(int128, int128)", "testMul(int128, int128)", "testMuli(int128, int256)", "testMulu(int128, uint256)", "testDiv(int128, int128)", "testNeg(int128)", "testAbs(int128)", "testInv(int128)"]
+
+# For individual tests
+filterFunctions: ["Test.testFromInt(int256)"]
