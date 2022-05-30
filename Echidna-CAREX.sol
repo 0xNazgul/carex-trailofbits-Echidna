@@ -25,7 +25,7 @@ contract Test is TestUtil {
 	}
 
 	/// @dev Test function of toInt().
-    /// @param x signed 64.64-bit fixed point number.
+    	/// @param x signed 64.64-bit fixed point number.
 	function testToInt(int128 x) public pure {
 		if (x >= 0) {
     		// Assert that toInt is converting from signed 64.64 fixed point number into signed 64-bit integer number rounding down correctly.
@@ -109,8 +109,8 @@ contract Test is TestUtil {
 		// if  x == 0 && y == 0, then z == 0.
 		} else if (x == 0 && y == 0) {
 			assert(z == 0);
-        	return;
-    	} else {
+        		return;
+    		} else {
 			// if z - x = y2, y <= y2.
 			int128 y2 = sub(z, x);
 			assert(y <= y2);
@@ -119,11 +119,11 @@ contract Test is TestUtil {
 			int128 x2 = sub(z, y);
 			assert(x <= x2);	
 		}			
-    }
+    	}
 
 	/// @dev Test function for sub.
 	/// @param x signed 64.64-bit fixed point number.
-    /// @param y signed 64.64-bit fixed point number.
+    	/// @param y signed 64.64-bit fixed point number.
 	function testSub(int128 x, int128 y) public view {
 		int128 z = sub(x, y);
 
@@ -137,8 +137,8 @@ contract Test is TestUtil {
 		// if  x == 0 && y == 0, then z == 0.
 		} else if (x == 0 && y == 0) {
 			assert(z == 0);
-        	return;
-    	} else if (x == y) {
+        		return;
+    		} else if (x == y) {
 			assert(z == 0);
 			return;
 		} else {
@@ -150,8 +150,8 @@ contract Test is TestUtil {
 			int128 x2 = add(z, y);
 			assert(x <= x2);	
 		}			
-    }	
-
+    	}	
+	
 	/// @dev Test function for mul.
 	/// @param x signed 64.64-bit fixed point number.
 	/// @param y signed 64.64-bit fixed point number.
@@ -167,10 +167,10 @@ contract Test is TestUtil {
 			assert(z <= int256(x) * y >> 64);
 		// If either x or y are 0 then z == 0
 		} else if (x == 0 || y == 0) {
-            assert(z == 0);
-        	return;
+           		assert(z == 0);
+        		return;
 		// If x == 1 then z <= y.
-    	} else if (x == 1) {
+    		} else if (x == 1) {
 			assert(z <= y);
 			return;
 		// If x == -1 then -z <= y.
@@ -251,8 +251,8 @@ contract Test is TestUtil {
 	}
 
 	/// @dev Test for function mulu.
-    /// @param x signed 64.64 fixed point number.
-    /// @param y unsigned 256-bit integer number.
+   	/// @param x signed 64.64 fixed point number.
+    	/// @param y unsigned 256-bit integer number.
 	function testMulu(int128 x, uint256 y) public view {
 		// precondition to check that x >= 0
 		bool precondition = x >= 0;
@@ -264,7 +264,7 @@ contract Test is TestUtil {
 		}
 		// Calculate lo and hi to be used in further preconditions.
 		uint256 lo = (uint256 (int256 (x)) * (y & 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) >> 64;
-      	uint256 hi = uint256 (int256 (x)) * (y >> 128);
+      		uint256 hi = uint256 (int256 (x)) * (y >> 128);
 
 		bool precondition2 = hi <= 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF;
 		bool precondition3 = hi <= 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF - lo;
@@ -281,8 +281,8 @@ contract Test is TestUtil {
 	}
 
 	/// @dev Test for function div.
-    /// @param x signed 64.64-bit fixed point number.
-    /// @param y signed 64.64-bit fixed point number.
+    	/// @param x signed 64.64-bit fixed point number.
+    	/// @param y signed 64.64-bit fixed point number.
 	function testDiv(int128 x, int128 y) public view {
 		int128 z = div(x, y);
 		
@@ -323,7 +323,7 @@ contract Test is TestUtil {
 
 	/// @dev Test for function divi.
 	/// @param x signed 256-bit integer number
-    /// @param y signed 256-bit integer number
+    	/// @param y signed 256-bit integer number
 	function testDivi (int256 x, int256 y) public view {
 		bool precondition = y != 0;
 
@@ -331,16 +331,16 @@ contract Test is TestUtil {
 		if(!precondition) {
 			try this.divi(x, y) { assert(false); } catch {}
 		} else {
-      		bool negativeResult = false;
-      		if (x < 0) {
-        		x = -x; 
-    		    negativeResult = true;
-      		}
-      		if (y < 0) {
-        		y = -y;
-        		negativeResult = !negativeResult;
-      		}
-      		uint128 absoluteResult = divuu(uint256 (x), uint256 (y));
+      			bool negativeResult = false;
+      			if (x < 0) {
+        			x = -x; 
+    		    		negativeResult = true;
+      			}
+      			if (y < 0) {
+        			y = -y;
+        			negativeResult = !negativeResult;
+      			}
+      			uint128 absoluteResult = divuu(uint256 (x), uint256 (y));
 			bool precondition2 = absoluteResult <= 0x80000000000000000000000000000000;
 			bool precondition3 = absoluteResult <= 0x7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF;
 			if(negativeResult) {
@@ -433,8 +433,8 @@ contract Test is TestUtil {
 	}
 
 	/// @dev Test for function avg.
-    /// @param x signed 64.64-bit fixed point number.
-    /// @param y signed 64.64-bit fixed point number.
+    	/// @param x signed 64.64-bit fixed point number.
+    	/// @param y signed 64.64-bit fixed point number.
 	function testAvg(int128 x, int128 y) public pure {
 		int128 z = avg(x, y);		 
 		int256 sum = int128((int256(x) + int256(y)) >> 1);
@@ -442,8 +442,8 @@ contract Test is TestUtil {
 	}
 
 	/// @dev Test for function gavg.
-    /// @param x signed 64.64-bit fixed point number.
-    /// @param y signed 64.64-bit fixed point number.
+    	/// @param x signed 64.64-bit fixed point number.
+    	/// @param y signed 64.64-bit fixed point number.
 	function testGavg(int128 x, int128 y) public view {
 		int256 z = int256(x) * int256(y);
 
