@@ -1,6 +1,6 @@
 filterBlacklist: false
 # For all tests
-filterFunctions: ["Test.testFromInt(int256)", "Test.testToInt(int128)", "Test.testFromUInt(uint256)", "Test.testToUInt(int128)", "Test.testFrom128x128(int256)", "Test.testTo128x128(int128)", "Test.testAdd(int128, int128)", "Test.testSub(int128, int128)", "Test.testMul(int128, int128)", "Test.testMuli(int128, int256)", "Test.testMulu(int128, uint256)", "Test.testDiv(int128, int128)", "Test.testNeg(int128)", "Test.testAbs(int128)", "Test.testInv(int128)"]
+filterFunctions: ["Test.testFromInt(int256)", "Test.testToInt(int128)", "Test.testFromUInt(uint256)", "Test.testToUInt(int128)", "Test.testFrom128x128(int256)", "Test.testTo128x128(int128)", "Test.testAdd(int128, int128)", "Test.testSub(int128, int128)", "Test.testMul(int128, int128)", "Test.testMuli(int128, int256)", "Test.testMulu(int128, uint256)", "Test.testDiv(int128, int128)", "Test.testDivi(int256, int256)", "Test.testDivu(uint256, uint256)", "Test.testNeg(int128)", "Test.testAbs(int128)", "Test.testInv(int128)", "Test.testAvg(int128, int128)", "Test.testGavg(int128, int128)", "Test.testSqrt(int128)", "Test.testLn(int128)", "Test.testExp_2(int128)", "Test.testExp(int128)"]
 
 # For individual tests
-# filterFunctions: ["Test.testFromInt(int256)"]
+# filterFunctions: ["Test.testFromUInt(uint256)"]
