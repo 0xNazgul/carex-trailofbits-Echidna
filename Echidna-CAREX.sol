@@ -3,7 +3,7 @@ pragma solidity ^0.8.0;
 import "EchidnaUtil.sol";
 
 /// @title Echidna-CAREX
-/// @author 0xNazgul
+/// @author 0xNazgul.
 /// @notice This is made an amateur fuzzer and shouldn't be used for production.
 /// @notice No tests are done for pow() && log_2.
 contract Test is TestUtil {
