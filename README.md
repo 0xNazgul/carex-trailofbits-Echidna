@@ -1,4 +1,5 @@
 # Fuzz tests for the ABDK Math 64.64 library using Echidna
+This was my submission to the Secureum CAREX TOB Echidna workshop. Didn't find any artificial issues for the evaluation for this submission was disqualified because the code couldn't compile correctly. I would suggest looking at [BMateo](https://github.com/BMateo/EchidnaWorkshop/blob/main/contracts/Echidna-CAREX.sol) for he found 7/10. Still this may be a good learning source to look at and pick apart so enjoy!
 
 ## Before starting
 
